@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: var(--font);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+}
+
+@media (min-width: 768px) {
+    .onlyMobile {
+        display: none !important;
+    }
+}
+
+.hidden {
+    display: none !important;
+}

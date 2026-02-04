@@ -1,0 +1,121 @@
+.header9 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	padding: 24px 0;
+	transition: all 0.3s;
+}
+
+.header9::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.header9.header9--scrolled::before {
+	opacity: 1;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.header9__container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 32px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	z-index: 1;
+}
+
+.header9__brand {
+	font-size: 28px;
+	font-weight: 900;
+	background: linear-gradient(135deg, var(--brand) 0%, #ff8e53 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-decoration: none;
+	letter-spacing: 2px;
+	text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+}
+
+.header9__nav {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header9__links {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.header9__link-item {
+	list-style: none;
+}
+
+.header9__link {
+	display: block;
+	padding: 16px 24px;
+	color: var(--mainBgText);
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 15px;
+	border-radius: 9999px;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.header9__link::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, var(--brand) 0%, #ff8e53 100%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: -1;
+}
+
+.header9__link:hover {
+	color: var(--brandText);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.header9__link:hover::before {
+	opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.header9 {
+		padding: 16px 0;
+	}
+
+	.header9__container {
+		flex-direction: column;
+		gap: 16px;
+		padding: 16px;
+	}
+
+	.header9__links {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.header9__link {
+		padding: 8px 16px;
+		font-size: 13px;
+	}
+}

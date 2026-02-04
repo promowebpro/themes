@@ -1,0 +1,124 @@
+.header8 {
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header8__inner {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 24px 24px 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+.header8__logo-wrap {
+	text-align: center;
+}
+
+.header8__logo {
+	font-size: 32px;
+	font-weight: 900;
+	background: linear-gradient(135deg, var(--brand) 0%, #ec4899 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-decoration: none;
+	letter-spacing: 2px;
+	display: inline-block;
+	position: relative;
+}
+
+.header8__logo::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(135deg, var(--brand) 0%, #ec4899 100%);
+	opacity: 0.5;
+}
+
+.header8__nav {
+	width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.header8__nav::-webkit-scrollbar {
+	display: none;
+}
+
+.header8__menu {
+	display: flex;
+	gap: 4px;
+	justify-content: center;
+	min-width: min-content;
+	padding: 0 16px;
+}
+
+.header8__menu-item {
+	list-style: none;
+}
+
+.header8__menu-link {
+	display: block;
+	padding: 12px 24px;
+	color: var(--mainBgText);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 14px;
+	border-radius: 9999px;
+	white-space: nowrap;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.header8__menu-link::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, var(--brand) 0%, #ec4899 100%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: -1;
+}
+
+.header8__menu-link:hover {
+	color: var(--brandText);
+	transform: translateY(-2px);
+}
+
+.header8__menu-link:hover::before {
+	opacity: 1;
+}
+
+/* Адаптивность для мобильных - scroll snap */
+@media (max-width: 768px) {
+	.header8__nav {
+		scroll-snap-type: x mandatory;
+		padding: 0 16px;
+	}
+
+	.header8__menu {
+		justify-content: flex-start;
+		padding: 0;
+	}
+
+	.header8__menu-item {
+		scroll-snap-align: start;
+		flex-shrink: 0;
+	}
+}

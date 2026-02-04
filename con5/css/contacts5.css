@@ -1,0 +1,167 @@
+.contacts5 {
+	padding: 64px 0;
+	background-color: var(--mainBg);
+}
+
+.contacts5__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.contacts5__header {
+	text-align: center;
+	margin-bottom: 48px;
+}
+
+.contacts5__title {
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 24px;
+	color: var(--mainBgText);
+}
+
+.contacts5__text {
+	font-size: 18px;
+	color: var(--mainBgText);
+	opacity: 0.8;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.contacts5__text:empty {
+	display: none;
+}
+
+.contacts5__content {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 48px;
+	align-items: start;
+}
+
+/* Если нет формы, контент занимает всю ширину */
+.contacts5__content:has(.contacts5__form:empty) {
+	grid-template-columns: 1fr;
+}
+
+.contacts5__form:only-child {
+	grid-column: 1/-1;
+}
+
+.contacts5__info:only-child {
+	grid-column: 1/-1;
+	text-align: center;
+}
+
+.contacts5__info {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.contacts5__email {
+	font-size: 18px;
+	color: var(--brand);
+	font-weight: 600;
+}
+
+.contacts5__email:empty {
+	display: none;
+}
+
+.contacts5__email a {
+	color: var(--brand);
+	text-decoration: none;
+	transition: opacity 0.2s;
+}
+
+.contacts5__email a:hover {
+	opacity: 0.8;
+}
+
+.contacts5__form {
+	background-color: var(--mainBg);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	padding: 32px;
+}
+
+.contacts5__form:empty {
+	display: none;
+}
+
+.contacts5__form-field {
+	margin-bottom: 24px;
+}
+
+.contacts5__form-field:last-of-type {
+	margin-bottom: 32px;
+}
+
+.contacts5__form-label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 600;
+	color: var(--mainBgText);
+}
+
+.contacts5__form-input,
+.contacts5__form-textarea {
+	width: 100%;
+	padding: 16px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	font-size: 16px;
+	font-family: inherit;
+	transition: border-color 0.2s;
+	background-color: var(--mainBg);
+	color: var(--mainBgText);
+}
+
+.contacts5__form-input:focus,
+.contacts5__form-textarea:focus {
+	outline: none;
+	border-color: var(--brand);
+}
+
+.contacts5__form-textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.contacts5__form-submit {
+	background-color: var(--brand);
+	color: var(--brandText);
+	border: none;
+	padding: 16px 32px;
+	border-radius: 8px;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: opacity 0.2s;
+	width: 100%;
+}
+
+.contacts5__form-submit:hover {
+	opacity: 0.9;
+}
+
+.contacts5__form-submit:active {
+	transform: translateY(1px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.contacts5 {
+		padding: 48px 0;
+	}
+
+	.contacts5__title {
+		font-size: 28px;
+	}
+
+	.contacts5__content {
+		grid-template-columns: 1fr;
+	}
+}

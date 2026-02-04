@@ -1,0 +1,84 @@
+.hero5 {
+	position: relative;
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-color: var(--brand);
+	color: var(--brandText);
+}
+
+.hero5__background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+
+.hero5__background::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Если нет фонового изображения, скрываем overlay */
+.hero5__background:empty::after {
+	display: none;
+}
+
+.hero5__container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 64px 24px;
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+
+.hero5__title {
+	font-size: 48px;
+	font-weight: 700;
+	margin-bottom: 24px;
+	color: var(--brandText);
+}
+
+.hero5__text {
+	font-size: 18px;
+	line-height: 1.6;
+	max-width: 700px;
+	margin: 0 auto;
+	color: var(--brandText);
+}
+
+.hero5__text:empty {
+	display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+	.hero5 {
+		min-height: 400px;
+	}
+
+	.hero5__title {
+		font-size: 32px;
+	}
+
+	.hero5__text {
+		font-size: 16px;
+	}
+
+	.hero5__container {
+		padding: 48px 24px;
+	}
+}

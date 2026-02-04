@@ -1,0 +1,119 @@
+.faq5 {
+    padding: 100px 0;
+    background-color: var(--mainBg);
+}
+
+.faq5__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.faq5__header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.faq5__title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--mainBgText);
+}
+
+.faq5__text {
+    font-size: 18px;
+    color: var(--mainBgText);
+    opacity: 0.8;
+}
+
+.faq5__text:empty {
+    display: none;
+}
+
+.faq5__items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.faq5__item {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--mainBg);
+}
+
+.faq5__question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mainBgText);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.faq5__question:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.faq5__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 32px;
+}
+
+.faq5__item--active .faq5__answer {
+    max-height: 500px;
+    padding: 0 32px 32px;
+}
+
+.faq5__answer-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--mainBgText);
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .faq5 {
+        padding: 48px 0;
+    }
+
+    .faq5__title {
+        font-size: 28px;
+    }
+
+    .faq5__question {
+        font-size: 16px;
+        padding: 24px;
+    }
+
+    .faq5__item--active {
+        padding-bottom: 24px;
+    }
+
+    .faq5__item--active .faq5__answer {
+        padding: 0 24px 24px;
+    }
+}
+
+
+@media (min-width: 960px) {
+    .faq5__items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+    }
+}

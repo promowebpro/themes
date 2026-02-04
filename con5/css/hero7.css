@@ -1,0 +1,113 @@
+.hero7 {
+	position: relative;
+	background-color: var(--mainBgText);
+	min-height: 600px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.hero7::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 80%;
+	height: 150%;
+	background: linear-gradient(135deg, var(--brand) 0%, #10b981 100%);
+	border-radius: 50%;
+	opacity: 0.15;
+	transform: rotate(-15deg);
+}
+
+.hero7::after {
+	content: '';
+	position: absolute;
+	bottom: -30%;
+	left: -15%;
+	width: 60%;
+	height: 100%;
+	background: var(--brand);
+	border-radius: 50%;
+	opacity: 0.08;
+	transform: rotate(25deg);
+}
+
+.hero7__backdrop {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+
+.hero7__backdrop:not(:empty)::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+
+.hero7__wrapper {
+	max-width: 1240px;
+	margin: 0 auto;
+	padding: 96px 32px;
+	position: relative;
+	z-index: 1;
+}
+
+.hero7__box {
+	max-width: 680px;
+}
+
+.hero7__heading {
+	font-size: 72px;
+	font-weight: 900;
+	color: #ffffff;
+	line-height: 1;
+	margin-bottom: 32px;
+	letter-spacing: -2px;
+	text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero7__heading::first-letter {
+	color: var(--brand);
+}
+
+.hero7__description {
+	font-size: 22px;
+	line-height: 1.6;
+	color: #ffffff;
+	opacity: 0.95;
+}
+
+.hero7__description:empty {
+	display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+	.hero7__heading {
+		font-size: 56px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero7 {
+		min-height: 500px;
+	}
+
+	.hero7__wrapper {
+		padding: 72px 32px;
+	}
+
+	.hero7__heading {
+		font-size: 42px;
+		letter-spacing: -1px;
+	}
+
+	.hero7__description {
+		font-size: 18px;
+	}
+}

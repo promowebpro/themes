@@ -1,0 +1,147 @@
+.faq6 {
+	padding: 96px 0;
+	background-color: var(--mainBg);
+}
+
+.faq6__container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+
+.faq6__intro {
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+.faq6__title {
+	font-size: 48px;
+	font-weight: 800;
+	color: var(--mainBgText);
+	margin-bottom: 24px;
+	letter-spacing: -0.5px;
+}
+
+.faq6__description {
+	font-size: 18px;
+	line-height: 1.7;
+	color: var(--mainBgText);
+	opacity: 0.7;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.faq6__description:empty {
+	display: none;
+}
+
+.faq6__list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.faq6__item {
+	background-color: #ffffff;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.3s;
+}
+
+.faq6__item:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq6__question-wrapper {
+	width: 100%;
+	border: none;
+	background: none;
+	padding: 32px;
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	text-align: left;
+	gap: 24px;
+}
+
+.faq6__question {
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--mainBgText);
+	flex: 1;
+}
+
+.faq6__icon {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: var(--brand);
+	color: var(--brandText);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: 700;
+	flex-shrink: 0;
+	transition: transform 0.3s;
+}
+
+.faq6__item--active .faq6__icon {
+	transform: rotate(45deg);
+}
+
+.faq6__answer {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+}
+
+.faq6__item--active .faq6__answer {
+	max-height: 600px;
+}
+
+.faq6__answer-content {
+	padding: 0 32px 32px;
+	font-size: 16px;
+	line-height: 1.8;
+	color: var(--mainBgText);
+	opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+	.faq6__title {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.faq6 {
+		padding: 64px 0;
+	}
+
+	.faq6__title {
+		font-size: 32px;
+	}
+
+	.faq6__question-wrapper {
+		padding: 24px;
+	}
+
+	.faq6__question {
+		font-size: 18px;
+	}
+
+	.faq6__icon {
+		width: 28px;
+		height: 28px;
+		font-size: 18px;
+	}
+
+	.faq6__answer-content {
+		padding: 0 24px 24px;
+	}
+}

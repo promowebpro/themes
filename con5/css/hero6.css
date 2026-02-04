@@ -1,0 +1,108 @@
+.hero6 {
+	background-color: var(--mainBg);
+	padding: 96px 0;
+	overflow: hidden;
+}
+
+.hero6__container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 32px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 64px;
+	align-items: center;
+}
+
+.hero6__content {
+	max-width: 600px;
+}
+
+.hero6__title {
+	font-size: 64px;
+	font-weight: 800;
+	line-height: 1.1;
+	color: var(--mainBgText);
+	margin-bottom: 32px;
+	letter-spacing: -1px;
+}
+
+.hero6__text {
+	font-size: 20px;
+	line-height: 1.7;
+	color: var(--mainBgText);
+	opacity: 0.7;
+}
+
+.hero6__text:empty {
+	display: none;
+}
+
+.hero6__image {
+	width: 100%;
+	height: 500px;
+	background-color: var(--brand);
+	background-size: cover;
+	background-position: center;
+	border-radius: 20px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+	position: relative;
+}
+
+.hero6__image::before {
+	content: '';
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: 20px;
+	bottom: 20px;
+	border: 3px solid var(--brand);
+	border-radius: 20px;
+	opacity: 0.3;
+}
+
+.hero6__image:empty::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80px;
+	height: 80px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+	.hero6__title {
+		font-size: 48px;
+	}
+
+	.hero6__container {
+		gap: 48px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero6 {
+		padding: 64px 0;
+	}
+
+	.hero6__container {
+		grid-template-columns: 1fr;
+		gap: 32px;
+	}
+
+	.hero6__title {
+		font-size: 40px;
+	}
+
+	.hero6__text {
+		font-size: 18px;
+	}
+
+	.hero6__image {
+		height: 350px;
+	}
+}

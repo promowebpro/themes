@@ -1,0 +1,131 @@
+.hero9 {
+	position: relative;
+	height: 100vh;
+	min-height: 700px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background: #2d3436;
+}
+
+.hero9__media {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	animation: zoomIn 20s ease-in-out infinite alternate;
+}
+
+@keyframes zoomIn {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.1);
+	}
+}
+
+.hero9__gradient {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg,
+			rgba(255, 107, 107, 0.8) 0%,
+			rgba(78, 205, 196, 0.6) 50%,
+			rgba(102, 126, 234, 0.8) 100%);
+	mix-blend-mode: multiply;
+}
+
+.hero9::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.4) 0%, transparent 50%),
+		radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.4) 0%, transparent 50%);
+}
+
+.hero9__wrapper {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 32px;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.hero9__text {
+	max-width: 900px;
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(40px);
+	border: 2px solid rgba(255, 255, 255, 0.18);
+	border-radius: 48px;
+	padding: 80px;
+	box-shadow: 0 15px 50px 0 rgba(31, 38, 135, 0.35);
+	transform: translateY(0);
+	animation: floatIn 1s ease-out;
+}
+
+@keyframes floatIn {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero9__heading {
+	font-size: 82px;
+	font-weight: 900;
+	color: #ffffff;
+	line-height: 1;
+	margin-bottom: 32px;
+	letter-spacing: -3px;
+	text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero9__lead {
+	font-size: 24px;
+	line-height: 1.6;
+	color: #ffffff;
+	text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero9__lead:empty {
+	display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+	.hero9__heading {
+		font-size: 64px;
+	}
+
+	.hero9__lead {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero9 {
+		min-height: 600px;
+	}
+
+	.hero9__text {
+		padding: 48px;
+	}
+
+	.hero9__heading {
+		font-size: 42px;
+		letter-spacing: -2px;
+	}
+
+	.hero9__lead {
+		font-size: 17px;
+	}
+}
