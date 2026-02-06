@@ -1,65 +1,16 @@
-<?php if (empty($args)) return '';  ?>
+<?php
+$cta_title = !empty($args->title) ? $args->title : 'Запланируйте приватную консультацию';
+$cta_text = !empty($args->text) ? $args->text : 'Мы обсудим цели, риски и подберём оптимальную стратегию сделки в комфортном для вас формате.';
+?>
 
-
-<section class="contact6">
+<section class="contact6" id="consultation">
 	<div class="contact6__container">
-		<div class="contact6__info">
-			<?php if (!empty($args->title)) { ?>
-				<h2 class="contact6__title"><?=$args->title?></h2>
-			<? } ?>
-			<?php if (!empty($args->text)) { ?> 
-				<div class="contact6__description">
-					<?=$args->text?>
-				</div>
-			<? } ?>	
-			<?php if (!empty($args->email)) { ?>
-				<div class="contact6__email">
-					<a href="mailto:<?=$args->email?>"><?=$args->email?></a>
-				</div>
-			<? } ?>
-
-			
+		<div class="contact6__content">
+			<h2 class="contact6__title"><?=$cta_title?></h2>
+			<div class="contact6__description"><?=$cta_text?></div>
 		</div>
-		<?php if (!empty($args->form)) { ?> 
-		<div class="contact6__form-wrapper">
-			<form class="contact6__form">
-				<?php 
-				$i=0;
-				foreach ($args->form->fields as $item) { 
-					if ($item->type!="textarea") {
-				?>
-						<div class="contact6__form-row">
-							<label class="contact6__form-label" for="field-<?=$i?>"><?=$item->name?></label>
-							<input type="<?=$item->type?>" class="contact6__form-input" id="field-<?=$i?>" name="field-<?=$i?>" placeholder="<?=$item->name?>"/>
-						</div>
-				<? }
-					else { ?>
-						<div class="contact6__form-row">
-							<label class="contact6__form-label" for="field-<?=$i?>"
-								><?=$item->name?></label
-							>
-							<textarea
-								class="contact6__form-textarea"
-								id="field-<?=$i?>"
-								name="field-<?=$i?>"
-								placeholder="<?=$item->name?>"
-							></textarea>
-						</div>
-						
-					<? }
-				$i++;
-				} ?>
-				
-
-				
-				
-				
-
-				<button type="submit" class="contact6__form-button">
-					<?=$args->form->submit_text?>
-				</button>
-			</form>
-		</div>
-		<? } ?>
+		<a href="mailto:concierge@estate-advisory.ru" class="button button--light contact6__button">
+			Оставить заявку
+		</a>
 	</div>
 </section>

@@ -1319,13 +1319,102 @@ function services4Unmount() {
 	}
 }
 
+function header6Toggle() {
+	let nav = document.querySelector(".header6__nav");
+	if (nav) {
+		nav.classList.toggle("header6__nav--open");
+	}
+}
+
+function header6Close() {
+	let nav = document.querySelector(".header6__nav");
+	if (nav) {
+		nav.classList.remove("header6__nav--open");
+	}
+}
+
+function header6Init() {
+	header6Unmount();
+
+	let header = document.querySelector(".header6");
+	if (!header) {
+		return;
+	}
+	let burger = header.querySelector(".header6__burger");
+	let nav = header.querySelector(".header6__nav");
+
+	if (burger && nav) {
+		burger.addEventListener("click", header6Toggle);
+		nav.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", header6Close);
+		});
+	}
+}
+
+function header6Unmount() {
+	let header = document.querySelector(".header6");
+	if (!header) {
+		return;
+	}
+	let burger = header.querySelector(".header6__burger");
+	let nav = header.querySelector(".header6__nav");
+
+	if (burger) {
+		burger.removeEventListener("click", header6Toggle);
+	}
+	if (nav) {
+		nav.querySelectorAll("a").forEach((link) => {
+			link.removeEventListener("click", header6Close);
+		});
+		nav.classList.remove("header6__nav--open");
+	}
+}
+
+function faq6Listener(evt) {
+	let item = evt.currentTarget.closest(".faq6__item");
+	if (!item) {
+		return;
+	}
+	item.classList.toggle("faq6__item--active");
+	let answer = item.querySelector(".faq6__answer");
+	if (answer) {
+		if (item.classList.contains("faq6__item--active")) {
+			answer.style.maxHeight = `${answer.scrollHeight}px`;
+		} else {
+			answer.style.maxHeight = "";
+		}
+	}
+}
+
+function faq6Init() {
+	faq6Unmount();
+
+	let faqButtons = document.querySelectorAll(".faq6__question-wrapper");
+	if (faqButtons.length) {
+		faqButtons.forEach((btn) => {
+			btn.addEventListener("click", faq6Listener);
+		});
+	}
+}
+
+function faq6Unmount() {
+	document.querySelectorAll(".faq6__question-wrapper").forEach((btn) => {
+		btn.removeEventListener("click", faq6Listener);
+	});
+	document.querySelectorAll(".faq6__answer").forEach((answer) => {
+		answer.style.maxHeight = "";
+	});
+}
+
 function faq2Init() {}
 
 function faq2Unmount() {}
 
 advantagesInit();
 faqInit();
+faq6Init();
 faq2Init();
+header6Init();
 contacts2Init();
 cta2Init();
 cta3Init();
@@ -1371,7 +1460,9 @@ function unmount() {
 
 	advantagesUnmount();
 	faqUnmount();
+	faq6Unmount();
 	faq2Unmount();
+	header6Unmount();
 	contacts2Unmount();
 	cta2Unmount();
 	cta3Unmount();

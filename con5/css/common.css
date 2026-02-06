@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+    --font: 'Manrope', 'Inter', 'DM Sans', Arial, sans-serif;
+    --mainBg: #f7f7f5;
+    --mainBgText: #2b2f36;
+    --brand: #1f2a44;
+    --brandText: #ffffff;
+}
+
 body {
     margin: 0;
     font-family: var(--font);
+    background-color: var(--mainBg);
+    color: var(--mainBgText);
+    line-height: 1.6;
 }
 
 *,
@@ -13,6 +26,62 @@ img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+a {
+    color: inherit;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+.button--primary {
+    background-color: var(--brand);
+    color: var(--brandText);
+    box-shadow: 0 10px 24px rgba(31, 42, 68, 0.2);
+}
+
+.button--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(31, 42, 68, 0.25);
+}
+
+.button--ghost {
+    background-color: transparent;
+    border-color: rgba(31, 42, 68, 0.2);
+    color: var(--mainBgText);
+}
+
+.button--ghost:hover {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+
+.button--light {
+    background-color: #ffffff;
+    color: var(--mainBgText);
+}
+
+.button--light:hover {
+    color: var(--brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button {
+        transition: none;
+    }
 }
 
 input,
