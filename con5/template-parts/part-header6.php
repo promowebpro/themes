@@ -14,11 +14,12 @@
 				<li class="header6__menu-item">
 					<a href="<?=$item->url?>" class="header6__menu-link"><?=$item->text?></a>
 				</li>
-
-				
 				<? } ?>
 			</ul>
+			<a href="#consultation" class="header6__cta button button--primary">Получить консультацию</a>
 		</nav>
-		<? } ?>
+		<? } else { ?>
+			<a href="#consultation" class="header6__cta button button--primary">Получить консультацию</a>
+		<?php } ?>
 	</div>
 </header>

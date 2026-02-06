@@ -1,6 +1,6 @@
 <?php if (empty($args)) return '';  ?>
 
-<section class="faq6" name="faq6">
+<section class="faq6" id="faq6" name="faq6">
 	<div class="faq6__container">
 		<?php if (!empty($args->title) || !empty($args->text)) { ?>
 		<div class="faq6__intro">
@@ -23,8 +23,8 @@
 				<div class="faq6__item" data-index="<?=$i?>">
 					<button type="button" class="faq6__question-wrapper">
 						<?php if (!empty($item->question)) { ?>
-								<?=$item->question?>
-						<? } ?>
+							<span class="faq6__question"><?=$item->question?></span>
+						<?php } ?>
 						<div class="faq6__icon">+</div>
 					</button>
 						<?php if (!empty($item->answer)) { ?> 

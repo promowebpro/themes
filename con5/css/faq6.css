@@ -15,8 +15,8 @@
 }
 
 .faq6__title {
-	font-size: 48px;
-	font-weight: 800;
+	font-size: 42px;
+	font-weight: 600;
 	color: var(--mainBgText);
 	margin-bottom: 24px;
 	letter-spacing: -0.5px;
@@ -38,26 +38,19 @@
 .faq6__list {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 0;
 }
 
 .faq6__item {
-	background-color: #ffffff;
-	border-radius: 12px;
-	overflow: hidden;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-	transition: box-shadow 0.3s;
-}
-
-.faq6__item:hover {
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(31, 42, 68, 0.12);
+	transition: background-color 0.3s;
 }
 
 .faq6__question-wrapper {
 	width: 100%;
 	border: none;
 	background: none;
-	padding: 32px;
+	padding: 28px 0;
 	cursor: pointer;
 	user-select: none;
 	display: flex;
@@ -68,8 +61,8 @@
 }
 
 .faq6__question {
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 18px;
+	font-weight: 600;
 	color: var(--mainBgText);
 	flex: 1;
 }
@@ -78,8 +71,8 @@
 	width: 32px;
 	height: 32px;
 	border-radius: 50%;
-	background-color: var(--brand);
-	color: var(--brandText);
+	border: 1px solid rgba(31, 42, 68, 0.2);
+	color: var(--brand);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -104,7 +97,7 @@
 }
 
 .faq6__answer-content {
-	padding: 0 32px 32px;
+	padding: 0 0 24px;
 	font-size: 16px;
 	line-height: 1.8;
 	color: var(--mainBgText);
@@ -114,7 +107,7 @@
 /* Адаптивность */
 @media (max-width: 1024px) {
 	.faq6__title {
-		font-size: 40px;
+		font-size: 36px;
 	}
 }
 
@@ -124,15 +117,15 @@
 	}
 
 	.faq6__title {
-		font-size: 32px;
+		font-size: 30px;
 	}
 
 	.faq6__question-wrapper {
-		padding: 24px;
+		padding: 22px 0;
 	}
 
 	.faq6__question {
-		font-size: 18px;
+		font-size: 17px;
 	}
 
 	.faq6__icon {
@@ -142,6 +135,6 @@
 	}
 
 	.faq6__answer-content {
-		padding: 0 24px 24px;
+		padding: 0 0 20px;
 	}
 }
